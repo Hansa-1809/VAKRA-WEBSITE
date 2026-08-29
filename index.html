@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VAKRA — Creative Technology Studio</title>
+<meta name="description" content="VAKRA is a multidisciplinary creative-tech studio: Design, Animation, Tech, Growth and Social.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+:root{--ink:#11110f;--paper:#f5f1e9;--muted:#77736b;--line:rgba(17,17,15,.16);--serif:"Playfair Display",serif;--sans:"Manrope",sans-serif;--mono:"DM Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}
+nav{height:78px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:#f5f1e9e8;backdrop-filter:blur(14px);z-index:10}.brand{font:600 24px var(--serif);letter-spacing:.18em}.navlinks{display:flex;gap:28px;font:11px var(--mono);text-transform:uppercase}.navlinks a{opacity:.6}.navlinks a:hover{opacity:1}
+.hero{min-height:calc(100vh - 78px);padding:7vh 5vw;display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}.eyebrow{font:11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}h1{font:500 clamp(78px,13vw,190px)/.8 var(--serif);letter-spacing:-.07em;margin:22px 0 28px}.hero-copy{max-width:540px;font-size:clamp(18px,2vw,26px);line-height:1.45}.hero-copy em{font-family:var(--serif)}.cta{display:inline-flex;margin-top:30px;border:1px solid var(--ink);padding:14px 18px;font:11px var(--mono);text-transform:uppercase;letter-spacing:.08em;transition:.3s}.cta:hover{background:var(--ink);color:var(--paper)}
+.logo-stage{height:520px;display:grid;place-items:center;position:relative}.logo-stage img{width:min(80%,470px);mix-blend-mode:multiply;filter:grayscale(1);animation:float 5s ease-in-out infinite}.orbit{position:absolute;width:390px;height:390px;border:1px solid var(--line);border-radius:50%;animation:spin 20s linear infinite}.orbit:after{content:"";position:absolute;width:7px;height:7px;background:var(--ink);border-radius:50%;top:0;left:50%;transform:translate(-50%,-50%)}@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-12px)}}
+.marquee{overflow:hidden;white-space:nowrap;border-block:1px solid var(--ink);padding:14px 0;font:11px var(--mono);letter-spacing:.12em}.track{display:inline-block;animation:marquee 24s linear infinite}.track span{margin:0 28px}@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:115px 5vw;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;gap:30px;margin-bottom:55px}.section-title{font:500 clamp(42px,6vw,80px)/.95 var(--serif);margin:0}.section-note{max-width:320px;color:var(--muted);line-height:1.6;font-size:14px}
+.manifesto{display:grid;grid-template-columns:1fr 2fr;gap:8vw}.manifesto h2{font:500 clamp(42px,7vw,92px)/.95 var(--serif);margin:12px 0}.manifesto p{font-size:clamp(24px,3vw,43px);line-height:1.25;margin:0}.manifesto p em{font-family:var(--serif)}
+.services{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--ink)}.service{min-height:360px;padding:26px 21px;border-right:1px solid var(--line);position:relative;overflow:hidden;transition:.4s}.service:last-child{border:0}.service:hover{background:var(--ink);color:var(--paper);transform:translateY(-7px)}.num{font:10px var(--mono);opacity:.55}.service h3{font:500 clamp(24px,2.4vw,37px)/1.02 var(--serif);margin:65px 0 18px}.service p{font-size:13px;line-height:1.65;opacity:.68;max-width:220px}.arrow{position:absolute;right:20px;bottom:20px;font-size:24px;transition:.3s}.service:hover .arrow{transform:translate(6px,-6px)}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}.step{background:var(--paper);padding:28px;min-height:220px}.step b{font:11px var(--mono)}.step h3{font:30px var(--serif);font-weight:500;margin:55px 0 10px}.step p{font-size:13px;color:var(--muted);line-height:1.55}
+.contact{min-height:70vh;display:flex;flex-direction:column;justify-content:space-between}.contact h2{font:500 clamp(60px,12vw,170px)/.8 var(--serif);letter-spacing:-.06em;margin:0}.contact-bottom{display:flex;justify-content:space-between;align-items:end;gap:30px}.contact-bottom p{max-width:430px;color:var(--muted);line-height:1.6}
+footer{padding:25px 5vw;display:flex;justify-content:space-between;gap:20px;font:10px var(--mono);text-transform:uppercase;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.navlinks{display:none}.hero{grid-template-columns:1fr}.logo-stage{height:350px;order:-1}.orbit{width:270px;height:270px}.services{grid-template-columns:1fr 1fr}.service:nth-child(even){border-right:0}.service{border-bottom:1px solid var(--line)}.manifesto{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.contact-bottom{flex-direction:column;align-items:flex-start}}
+@media(max-width:560px){section{padding:80px 5vw}.services,.process{grid-template-columns:1fr}.service{border-right:0}.logo-stage{height:290px}h1{font-size:80px}}
+</style>
+</head>
+<body>
+<nav><a class="brand" href="#top">VAKRA</a><div class="navlinks"><a href="#studio">Studio</a><a href="#branches">Branches</a><a href="#process">Process</a><a href="#contact">Contact</a></div></nav>
+<main id="top">
+<section class="hero"><div class="reveal"><div class="eyebrow">Creative Technology Studio · Est. 2026</div><h1>VAKRA</h1><div class="hero-copy">Five minds. Five disciplines. <em>One unconventional vision.</em><br>We design, animate, build, grow and give ideas a voice.</div><a class="cta" href="#branches">Explore VAKRA ↓</a></div><div class="logo-stage reveal"><div class="orbit"></div><img src="vakra-logo.png" alt="VAKRA logo"></div></section>
+<div class="marquee"><div class="track"><span>DESIGN</span>✦<span>ANIMATION</span>✦<span>TECH</span>✦<span>GROWTH</span>✦<span>SOCIAL</span>✦<span>DESIGN</span>✦<span>ANIMATION</span>✦<span>TECH</span>✦<span>GROWTH</span>✦<span>SOCIAL</span>✦</div></div>
+<section id="studio" class="manifesto"><div class="reveal"><div class="eyebrow">01 / The studio</div><h2>Ideas don't follow straight lines.</h2></div><div class="reveal"><p>VAKRA is a <em>multidisciplinary creative-tech studio</em> built by five minds with five different strengths. We bring design, motion, technology, growth and social thinking together to turn an idea into something people can see, use, remember and share.</p></div></section>
+<section id="branches"><div class="section-head reveal"><div><div class="eyebrow">02 / Our branches</div><h2 class="section-title">One studio.<br>Five directions.</h2></div><div class="section-note">Each branch has its own craft. Together, they form the VAKRA system.</div></div>
+<div class="services">
+<a class="service reveal" href="#contact"><span class="num">01</span><h3>VAKRA /<br>DESIGN</h3><p>Brand identities, visual systems, UI/UX, campaigns, packaging and everything that gives an idea its shape.</p><span class="arrow">↗</span></a>
+<a class="service reveal" href="#contact"><span class="num">02</span><h3>VAKRA /<br>ANIMATION</h3><p>Logo motion, ads, reels, 2D/3D experiments, micro-interactions and movement that makes brands feel alive.</p><span class="arrow">↗</span></a>
+<a class="service reveal" href="#contact"><span class="num">03</span><h3>VAKRA /<br>TECH</h3><p>Landing pages, websites, digital experiences, prototypes, integrations and useful tools built around the idea.</p><span class="arrow">↗</span></a>
+<a class="service reveal" href="#contact"><span class="num">04</span><h3>VAKRA /<br>GROWTH</h3><p>Positioning, research, launch strategy, audience thinking, campaigns and the path from attention to action.</p><span class="arrow">↗</span></a>
+<a class="service reveal" href="#contact"><span class="num">05</span><h3>VAKRA /<br>SOCIAL</h3><p>Content systems, storytelling, social strategy, reels, carousels, community and the voice people meet online.</p><span class="arrow">↗</span></a>
+</div></section>
+<section id="process"><div class="section-head reveal"><div><div class="eyebrow">03 / How we work</div><h2 class="section-title">From thought<br>to presence.</h2></div></div><div class="process">
+<div class="step reveal"><b>01 — DISCOVER</b><h3>Understand</h3><p>We find the idea, audience, problem and opportunity before making anything.</p></div>
+<div class="step reveal"><b>02 — DEFINE</b><h3>Direction</h3><p>We shape the identity, positioning, experience and creative route.</p></div>
+<div class="step reveal"><b>03 — CREATE</b><h3>Build</h3><p>Five disciplines work together to turn the direction into a real digital presence.</p></div>
+<div class="step reveal"><b>04 — GROW</b><h3>Launch</h3><p>We put it in front of people, learn from the response and keep improving.</p></div>
+</div></section>
+<section id="contact" class="contact"><div class="reveal"><div class="eyebrow">04 / Start something</div><h2>Let's make<br>it VAKRA.</h2></div><div class="contact-bottom reveal"><p>Have an idea, a brand that needs a new direction, or a digital experience waiting to be built? Tell us what you're thinking.</p><a class="cta" href="mailto:hello@vakra.studio">hello@vakra.studio ↗</a></div></section>
+</main>
+<footer><span>© 2026 VAKRA</span><span>Design · Motion · Tech · Growth · Social</span><span>Different paths. One vision.</span></footer>
+<script>
+const obs=new IntersectionObserver(es=>es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('show'),Math.min(i*70,350));obs.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+</script>
+</body></html>
